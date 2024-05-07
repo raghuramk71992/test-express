@@ -1,11 +1,18 @@
-const express = require('express')
-const app = express()
-const port = 3000;
+// Import required modules
+const express = require('express');
 
+// Create an Express application
+const app = express();
+
+// Define a route
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  res.send('Hello, Azure App Service!');
+});
 
+// Define port
+const port = process.env.PORT || 3000;
+
+// Start the server
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Server is running on port ${port}`);
+});
